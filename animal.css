@@ -1,0 +1,23 @@
+.container {
+    width: 60%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.animal-info {
+    text-align: center;
+}
+
+.animal-info img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.details {
+    text-align: left;
+    margin-top: 20px;
+}
