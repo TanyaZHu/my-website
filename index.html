@@ -3,43 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна</title>
-<link rel="stylesheet" href="my-website/css/global.css">
-<link rel="stylesheet" href="my-website/css/home.css">
-
+    <title>Головна - Прихисток для тварин</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+
     <header class="header">
-        <h1>Ласкаво просимо</h1>
+        <div class="logo">
+            <img src="images/logo.png" alt="Логотип">
+            <span>LOGO NAME</span>
+        </div>
         <nav>
             <ul>
-                <li><a href="my-website/pages/login.html">Увійти</a></li>
-                <li><a href="my-website/pages/registr.html">Реєстрація</a></li>
-                <li><a href="my-website/pages/user.html">Профіль</a></li>
+                <li><a href="#">Пошук</a></li>
+                <li><a href="#">Новини</a></li>
+                <li><a href="#">Категорії</a></li>
             </ul>
         </nav>
+        <a href="pages/login.html" class="btn-primary">Увійти</a>
     </header>
 
-    <main class="container">
-        <section class="welcome">
-            <h2>Знайдіть улюбленця</h2>
-            <p>Виберіть тварину для усиновлення!</p>
-        </section>
-        <section class="featured">
-            <h2>Популярні тварини</h2>
-            <div class="animal-card">
-                <img src="my-website/images/animal1.jpg" alt="Кіт">
-                <p>Кіт Мурчик</p>
-            </div>
-            <div class="animal-card">
-                <img src="my-website/images/animal2.jpg" alt="Собака">
-                <p>Собака Барсик</p>
-            </div>
-        </section>
-    </main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Знайдіть улюбленця</h1>
+            <p>Обирайте серед сотень тварин, які шукають дім.</p>
+            <a href="pages/animals.html" class="btn-primary">Переглянути</a>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <p>© 2025 Всі права захищені</p>
+    <section class="featured">
+        <h2>Популярні тварини</h2>
+        <div class="animals-grid">
+            <div class="animal-card">
+                <img src="images/cat1.jpg" alt="Кіт Мурчик">
+                <h3>Мурчик</h3>
+                <p>2 роки, хлопчик</p>
+                <a href="pages/animal.html" class="btn-secondary">Детальніше</a>
+            </div>
+            <div class="animal-card">
+                <img src="images/dog1.jpg" alt="Собака Барсик">
+                <h3>Барсик</h3>
+                <p>4 роки, хлопчик</p>
+                <a href="pages/animal.html" class="btn-secondary">Детальніше</a>
+            </div>
+            <div class="animal-card">
+                <img src="images/cat2.jpg" alt="Кішка Луна">
+                <h3>Луна</h3>
+                <p>3 роки, дівчинка</p>
+                <a href="pages/animal.html" class="btn-secondary">Детальніше</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Всі права захищені</p>
     </footer>
+
 </body>
 </html>
