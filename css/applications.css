@@ -1,0 +1,16 @@
+.applications-container {
+    width: 80%;
+    margin: auto;
+    padding: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
