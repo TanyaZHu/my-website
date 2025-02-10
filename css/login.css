@@ -1,4 +1,4 @@
-/* Хедер */
+/* ====== Хедер ====== */
 .header {
     background-color: black;
     display: flex;
@@ -15,7 +15,7 @@
     max-width: 1200px;
 }
 
-/* Логотип */
+/* ====== Логотип ====== */
 .logo {
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@
     color: white;
 }
 
-/* Поле пошуку */
+/* ====== Пошуковий рядок ====== */
 .search-bar {
     display: flex;
     align-items: center;
@@ -57,7 +57,7 @@
     cursor: pointer;
 }
 
-/* Навігація */
+/* ====== Навігація ====== */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -69,16 +69,22 @@
     font-weight: bold;
 }
 
-/* Кнопка входу */
-.btn-primary {
-    background-color: #0056b3;
+/* ====== Кнопка "SIGN UP" ====== */
+.signup-btn {
+    background-color: #1E40FF;
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
+.signup-btn:hover {
+    background-color: #1629B9;
+}
 
+/* ====== Основні стилі сторінки входу ====== */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -90,6 +96,7 @@ body {
     height: 100vh;
 }
 
+/* ====== Стилі контейнера входу ====== */
 .login-page {
     display: flex;
     width: 80%;
@@ -117,6 +124,7 @@ body {
     font-size: 24px;
 }
 
+/* ====== Стилі форми входу ====== */
 .login-container input {
     width: 100%;
     padding: 12px;
@@ -146,20 +154,18 @@ body {
     background-color: #1629B9;
 }
 
-/* Sign Up button in top-right corner */
-.signup-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #1E40FF;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+/* ====== Стиль посилання на реєстрацію ====== */
+.login-container p {
+    margin-top: 15px;
+    font-size: 14px;
 }
 
-.signup-btn:hover {
-    background-color: #1629B9;
+.login-container a {
+    color: #1E40FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
 }
