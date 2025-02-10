@@ -19,8 +19,11 @@ body {
 }
 
 .register-image {
-    width: 50%;
-    background-color: #000;
+    width: 55%;
+    height: 500px; /* Додано висоту */
+    background: url('../images/register.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 10px;
 }
 
 .register-image img {
