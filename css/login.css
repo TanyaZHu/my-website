@@ -23,14 +23,15 @@ body {
     gap: 30px; /* Відстань між картинкою та формою */
 }
 
-/* ====== Блок зображення (тепер більше) ====== */
+/* ====== Блок зображення (тепер точно видно) ====== */
 .login-image {
     width: 55%;
-    height: 100%;
+    height: 500px; /* Додано висоту */
     background: url('../images/login.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
 }
+
 
 /* ====== Контейнер форми входу ====== */
 .login-container {
