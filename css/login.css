@@ -20,13 +20,8 @@ body {
 
 .login-image {
     width: 50%;
-    background-color: #000;
-}
-
-.login-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background: url('../images/login-bg.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .login-container {
@@ -43,32 +38,47 @@ body {
 
 .login-container input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: none;
-    border-radius: 5px;
-    background: #333;
+    border-radius: 8px;
+    background: #222;
     color: white;
     font-size: 16px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .login-button {
     width: 100%;
-    background-color: #0056b3;
+    background-color: #1E40FF;
     color: white;
     padding: 15px;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
-    border-radius: 5px;
-    margin-top: 20px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
-.login-container a {
-    color: #ddd;
+.login-button:hover {
+    background-color: #1629B9;
+}
+
+/* Sign Up button in top-right corner */
+.signup-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1E40FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
-.login-container a:hover {
-    text-decoration: underline;
+.signup-btn:hover {
+    background-color: #1629B9;
 }
