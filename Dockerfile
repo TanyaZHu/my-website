@@ -1,23 +1,16 @@
-# Використовуємо офіційний образ PHP 8.1 з Apache
-FROM php:8.1-apache
+# Використовуємо PHP 8.1 з FPM
+FROM php:8.1-fpm
 
-# Встановлюємо необхідні PHP-розширення
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Встановлюємо PostgreSQL-драйвери
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo_pgsql pgsql
 
-# Включаємо необхідні Apache-модулі
-RUN a2enmod rewrite headers
+# Встановлюємо робочу директорію (основна папка проєкту)
+WORKDIR /var/www/html
 
-# Копіюємо налаштування Apache
-COPY config/apache.conf /etc/apache2/sites-available/000-default.conf
+# Копіюємо всі файли в контейнер
+COPY . .
 
-# Налаштовуємо права доступу
-RUN chown -R www-data:www-data /var/www/html
-
-# Копіюємо всі файли у веб-каталог
-COPY . /var/www/html/
-
-# Відкриваємо порт 80
-EXPOSE 80
-
-# Запускаємо сервер Apache
-CMD ["apache2-foreground"]
+# Запускаємо вбудований сервер PHP (порт 8000)
+CMD ["php", "-S", "0.0.0.0:8000"]
