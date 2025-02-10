@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Mascota</title>
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/edit_animal.css">
+    <title>Редагувати тварину</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/edit_animal.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Editar Información de la Mascota</h1>
-        <form id="edit-animal-form">
-            <input type="text" name="name" placeholder="Nombre" required>
-            <input type="number" name="age" placeholder="Edad" required>
-            <select name="species" required>
-                <option value="">Selecciona la especie</option>
-                <option value="Perro">Perro</option>
-                <option value="Gato">Gato</option>
-            </select>
-            <textarea name="description" placeholder="Descripción" required></textarea>
-            <button type="submit">Actualizar</button>
+    <div class="edit-container">
+        <h2>Редагувати інформацію</h2>
+        <form action="/includes/update_animal.php" method="POST">
+            <label for="name">Ім'я</label>
+            <input type="text" id="name" name="name" value="Мурчик" required>
+
+            <label for="age">Вік</label>
+            <input type="number" id="age" name="age" value="2" required>
+
+            <label for="photo">Фото</label>
+            <input type="file" id="photo" name="photo">
+
+            <button type="submit">Оновити</button>
         </form>
     </div>
-
-    <script src="../assets/js/edit_animal.js"></script>
 </body>
 </html>
