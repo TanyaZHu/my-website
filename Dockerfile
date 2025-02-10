@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /var/www/html
 
 # Копіюємо файли у контейнер
-COPY . .
+COPY . /var/www/html
 
 # Запускаємо PHP-сервер (порт 8000)
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "my-website-main"]
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "/var/www/html"]
