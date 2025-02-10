@@ -25,8 +25,8 @@ body {
 /* ====== Блок зображення (виправлено) ====== */
 .register-image {
     width: 55%;
-    height: 100%;
-    background: url('../images/register.png') no-repeat center center;
+    height: 500px;
+    background: url('../images/Create account.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
 }
@@ -39,17 +39,38 @@ body {
     color: white;
 }
 
-/* ====== Поля вводу ====== */
+/* ====== Поля вводу (змінено на світлий колір) ====== */
 .register-container input, .register-container select {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: none;
     border-radius: 8px;
-    background: #222;
-    color: white;
+    background: #f5f5f5; /* Світлий фон */
+    color: black; /* Чорний текст */
     font-size: 16px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-container input::placeholder, .register-container select {
+    color: #777; /* Світло-сірий текст */
+}
+
+/* ====== Випадаючі списки (зменшені та в один рядок) ====== */
+.birthdate {
+    display: flex;
+    gap: 10px;
+}
+
+.birthdate select {
+    width: 32%;
+}
+
+/* ====== Лейбли біля полів (змінений колір) ====== */
+.register-container label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
 }
 
 /* ====== Кнопка реєстрації ====== */
@@ -59,7 +80,7 @@ body {
     color: white;
     padding: 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px; /* Закруглена кнопка */
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
