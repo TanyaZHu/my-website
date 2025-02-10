@@ -1,23 +1,17 @@
-h1, h2 {
-    text-align: center;
+.applications-container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #4CAF50;
+.application-card {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
     color: white;
+}
+
+.application-status {
+    font-weight: bold;
+    color: #4CAF50;
 }
