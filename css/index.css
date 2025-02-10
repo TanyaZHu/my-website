@@ -15,6 +15,7 @@
     max-width: 1200px;
 }
 
+/* Логотип */
 .logo {
     display: flex;
     align-items: center;
@@ -23,8 +24,16 @@
 
 .logo img {
     height: 40px;
+    width: auto;
 }
 
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Поле пошуку */
 .search-bar {
     display: flex;
     align-items: center;
@@ -48,6 +57,7 @@
     cursor: pointer;
 }
 
+/* Навігація */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -59,39 +69,11 @@
     font-weight: bold;
 }
 
+/* Кнопка входу */
 .btn-primary {
     background-color: #0056b3;
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
-}
-
-/* Hero Section */
-.hero {
-    background: url("../images/banner.png") no-repeat center center;
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-content {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-}
-
-.hero-content h1 {
-    font-size: 32px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin: 10px 0;
 }
