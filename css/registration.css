@@ -26,7 +26,7 @@ body {
 .register-image {
     width: 55%;
     height: 500px;
-    background: url('../images/registration.png') no-repeat center center;
+    background: url('../images/Create account.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
 }
@@ -35,7 +35,7 @@ body {
 .register-container {
     width: 45%;
     padding: 40px;
-    text-align: left;
+    text-align: center; /* Вирівнюємо весь контент по центру */
     color: white;
 }
 
@@ -71,22 +71,28 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: white;
+    text-align: left;
+    display: block;
 }
 
-/* ====== Кнопка реєстрації ====== */
+/* ====== Кнопка реєстрації (по центру, зменшена) ====== */
 .register-button {
-    width: 100%;
+    width: 80%; /* Зменшена ширина */
+    max-width: 250px; /* Обмеження максимального розміру */
     background-color: #1E40FF;
     color: white;
-    padding: 15px;
+    padding: 12px;
     border: none;
-    border-radius: 30px; /* Закруглена кнопка */
+    border-radius: 25px; /* Закруглена кнопка */
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: background 0.3s ease;
+    margin: 15px auto; /* Центрування кнопки */
+    display: block;
 }
 
 .register-button:hover {
     background-color: #1629B9;
 }
+
