@@ -20,62 +20,58 @@ body {
     background: #1a1a1a;
     border-radius: 10px;
     padding: 20px;
-    gap: 30px; /* Відстань між картинкою та формою */
+    gap: 30px;
 }
 
-/* ====== Блок зображення (тепер точно видно) ====== */
+/* ====== Блок зображення (виправлено) ====== */
 .login-image {
     width: 55%;
-    height: 500px; /* Додано висоту */
+    height: 500px;
     background: url('../images/login.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
 }
 
-
-/* ====== Контейнер форми входу ====== */
+/* ====== Контейнер форми логіну ====== */
 .login-container {
     width: 45%;
     padding: 40px;
-    text-align: left; /* Вирівнюємо контент по лівому краю */
+    text-align: left;
     color: white;
 }
 
-/* ====== Заголовок ====== */
-.login-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-}
-
-/* ====== Вхідні поля (Email & Password) ====== */
-.login-container label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
+/* ====== Поля вводу (змінено на світлий колір) ====== */
 .login-container input {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: none;
     border-radius: 8px;
-    background: #222;
-    color: white;
+    background: #f5f5f5; /* Світлий фон */
+    color: black; /* Чорний текст */
     font-size: 16px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-    text-align: left; /* Вирівнюємо текст всередині інпутів */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ====== Кнопка входу ====== */
+.login-container input::placeholder {
+    color: #777; /* Світло-сірий текст */
+}
+
+/* ====== Лейбли біля полів (змінений колір) ====== */
+.login-container label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+/* ====== Кнопка входу (округлена) ====== */
 .login-button {
     width: 100%;
     background-color: #1E40FF;
     color: white;
     padding: 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px; /* Закруглена кнопка */
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
@@ -84,21 +80,4 @@ body {
 
 .login-button:hover {
     background-color: #1629B9;
-}
-
-/* ====== Стиль посилання на реєстрацію ====== */
-.login-container p {
-    margin-top: 15px;
-    font-size: 14px;
-    text-align: center;
-}
-
-.login-container a {
-    color: #1E40FF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.login-container a:hover {
-    text-decoration: underline;
 }
