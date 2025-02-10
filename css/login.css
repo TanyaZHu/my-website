@@ -1,21 +1,25 @@
-.container {
+.login-container {
     width: 40%;
     margin: auto;
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h1 {
-    color: #333;
-}
-
-input[type="email"], input[type="password"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    background-color: #000;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #777;
+    color: white;
+}
+
+.login-container button {
+    background-color: #0056b3;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
