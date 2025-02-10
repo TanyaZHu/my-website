@@ -21,7 +21,7 @@ body {
 }
 
 .card {
-    background-color: #222;
+    background-color: #222; /* Темний фон для карточок */
     padding: 15px;
     border-radius: 5px;
     margin: 15px;
