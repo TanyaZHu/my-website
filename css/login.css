@@ -1,89 +1,3 @@
-/* ====== Хедер ====== */
-.header {
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 0;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-}
-
-/* ====== Логотип ====== */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 40px;
-    width: auto;
-}
-
-.logo span {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
-
-/* ====== Пошуковий рядок ====== */
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #222;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.search-bar input {
-    background: none;
-    border: none;
-    color: white;
-    outline: none;
-    padding: 5px;
-}
-
-.search-button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* ====== Навігація ====== */
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ====== Кнопка "SIGN UP" ====== */
-.signup-btn {
-    background-color: #1E40FF;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.signup-btn:hover {
-    background-color: #1629B9;
-}
-
 /* ====== Основні стилі сторінки входу ====== */
 body {
     font-family: Arial, sans-serif;
@@ -96,47 +10,64 @@ body {
     height: 100vh;
 }
 
-/* ====== Стилі контейнера входу ====== */
+/* ====== Контейнер сторінки логіну ====== */
 .login-page {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
-    max-width: 1000px;
+    max-width: 1100px;
     background: #1a1a1a;
     border-radius: 10px;
-    overflow: hidden;
+    padding: 20px;
+    gap: 30px; /* Відстань між картинкою та формою */
 }
 
+/* ====== Блок зображення (тепер більше) ====== */
 .login-image {
-    width: 50%;
+    width: 55%;
+    height: 100%;
     background: url('../images/login.png') no-repeat center center;
     background-size: cover;
+    border-radius: 10px;
 }
 
+/* ====== Контейнер форми входу ====== */
 .login-container {
-    width: 50%;
+    width: 45%;
     padding: 40px;
-    text-align: center;
+    text-align: left; /* Вирівнюємо контент по лівому краю */
     color: white;
 }
 
+/* ====== Заголовок ====== */
 .login-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
+    text-align: center;
 }
 
-/* ====== Стилі форми входу ====== */
+/* ====== Вхідні поля (Email & Password) ====== */
+.login-container label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
 .login-container input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
+    margin-bottom: 15px;
     border: none;
     border-radius: 8px;
     background: #222;
     color: white;
     font-size: 16px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    text-align: left; /* Вирівнюємо текст всередині інпутів */
 }
 
+/* ====== Кнопка входу ====== */
 .login-button {
     width: 100%;
     background-color: #1E40FF;
@@ -158,6 +89,7 @@ body {
 .login-container p {
     margin-top: 15px;
     font-size: 14px;
+    text-align: center;
 }
 
 .login-container a {
