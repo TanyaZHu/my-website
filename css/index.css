@@ -1,61 +1,7 @@
-/* Глобальні стилі */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-}
-
-/* Хедер */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: black;
-    color: white;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-}
-
-.btn-primary {
-    background-color: #0056b3;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Головний банер */
 .hero {
-    background: url("../images/banner.jpg") no-repeat center center;
+    background: url("../images/banner.png") no-repeat center center;
     background-size: cover;
-    height: 400px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,25 +9,18 @@ nav ul li a {
     color: white;
 }
 
-.hero-content h1 {
-    font-size: 36px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-/* Популярні тварини */
-.featured {
-    text-align: center;
-    padding: 50px;
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .animals-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .animal-card {
@@ -89,33 +28,9 @@ nav ul li a {
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    width: 250px;
 }
 
 .animal-card img {
     width: 100%;
     border-radius: 10px;
-}
-
-.animal-card h3 {
-    margin: 10px 0;
-}
-
-.btn-secondary {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Футер */
-footer {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
 }
