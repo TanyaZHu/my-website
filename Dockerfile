@@ -4,8 +4,8 @@ FROM php:8.1-apache
 # Встановлюємо необхідні PHP-розширення
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Включаємо mod_rewrite для Apache
-RUN a2enmod rewrite
+# Включаємо необхідні Apache-модулі
+RUN a2enmod rewrite headers
 
 # Копіюємо налаштування Apache
 COPY config/apache.conf /etc/apache2/sites-available/000-default.conf
