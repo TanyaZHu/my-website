@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вхід</title>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Увійти</h2>
-        <form action="/includes/login.php" method="POST">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+    <div class="login-page">
+        <div class="login-image">
+            <img src="../images/login-bg.jpg" alt="Login Image">
+        </div>
 
-            <label for="password">Пароль</label>
-            <input type="password" id="password" name="password" required>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/includes/login.php" method="POST">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <button type="submit">Увійти</button>
-        </form>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="login-button">salida</button>
+            </form>
+            <p>Already have an account? <a href="register.html">Registro</a></p>
+        </div>
     </div>
 </body>
 </html>
