@@ -1,43 +1,30 @@
-.container {
+.create-form {
     width: 50%;
-    margin: auto;
-    background: white;
+    margin: 0 auto;
+    background-color: #222;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h1 {
-    color: #333;
-}
-
-input[type="text"], input[type="number"], select {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-textarea {
-    width: 80%;
-    height: 100px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #4CAF50;
+.create-form label {
+    font-weight: bold;
     color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
 }
 
-button:hover {
-    background-color: #45a049;
+.create-form input,
+.create-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+.create-form button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
 }
