@@ -1,37 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitudes recibidas</title>
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/applications_received.css">
+    <title>Заявки на усиновлення</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/applications_received.css">
 </head>
 <body>
-    <header>
-        <h1>Solicitudes de adopción</h1>
-        <nav>
-            <a href="user.html">Volver al perfil</a>
-            <button id="logout-button">Cerrar sesión</button>
-        </nav>
-    </header>
-
-    <main class="container">
-        <h2>Solicitudes de adopción para tus mascotas</h2>
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Mascota</th>
-                    <th>Usuario</th>
-                    <th>Estado</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody id="applications-table"></tbody>
-        </table>
-    </main>
-
-    <script src="../assets/js/applications_received.js"></script>
+    <div class="applications-container">
+        <h2>Ваші заявки</h2>
+        <div class="application-card">
+            <p>Заявка на усиновлення <strong>Кота Мурчика</strong></p>
+            <span class="application-status">Очікує розгляду</span>
+        </div>
+        <div class="application-card">
+            <p>Заявка на усиновлення <strong>Собаки Барсика</strong></p>
+            <span class="application-status">Схвалено</span>
+        </div>
+    </div>
 </body>
 </html>
