@@ -1,18 +1,69 @@
-.animal-card {
-    border: 1px solid #555;
-    background-color: #222;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
 }
 
-.animal-image {
+.animal-container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+    padding: 40px;
+}
+
+.animal-gallery {
+    width: 50%;
+}
+
+.main-image img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.animal-info {
-    font-size: 16px;
+.thumbnail-images {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail-images img {
+    width: 20%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.animal-details {
+    width: 50%;
+}
+
+.animal-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.animal-details p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.animal-details ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.register-button {
+    background-color: #0056b3;
     color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
