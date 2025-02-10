@@ -6,28 +6,36 @@ body {
     padding: 0;
 }
 
-/* ====== Хедер ====== */
+/* ====== Фіксований хедер ====== */
 .header {
     width: 100%;
     background-color: black;
     padding: 15px 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    z-index: 1000;
 }
 
+/* Контейнер всередині хедера */
 .header-container {
     width: 100%;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 }
 
+/* ====== Логотип ====== */
 .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .logo img {
@@ -46,8 +54,9 @@ body {
     display: flex;
     align-items: center;
     background-color: #222;
-    border-radius: 20px;
     padding: 5px 10px;
+    border-radius: 5px;
+    width: 250px;
 }
 
 .search-bar input {
@@ -56,7 +65,7 @@ body {
     color: white;
     font-size: 16px;
     padding: 5px;
-    width: 200px;
+    width: 100%;
     outline: none;
 }
 
@@ -69,15 +78,18 @@ body {
 }
 
 /* ====== Навігація ====== */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
-    font-size: 16px;
 }
 
-/* ====== Кнопка SIGN UP ====== */
+/* ====== Кнопка "SIGN UP" ====== */
 .signup-btn {
     background-color: #1E40FF;
     color: white;
@@ -92,32 +104,13 @@ body {
     background-color: #1629B9;
 }
 
-/* ====== Стилі для форми входу ====== */
-.login-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
-    background: #222;
-    color: white;
-    font-size: 16px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.login-button {
-    width: 100%;
-    background-color: #1E40FF;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: #1629B9;
+/* ====== Виправлення відступів для контенту під хедером ====== */
+.login-page {
+    margin-top: 100px; /* Щоб не перекривався хедером */
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
 }
