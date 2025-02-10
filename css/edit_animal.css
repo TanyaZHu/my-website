@@ -1,21 +1,22 @@
-.container {
-    width: 50%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.edit-container {
+    width: 60%;
+    margin: 0 auto;
 }
 
-h1 {
-    color: #333;
-}
-
-input[type="text"], input[type="number"], select, textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+.edit-card {
+    background-color: #222;
+    padding: 15px;
     border-radius: 5px;
+    border: 1px solid #555;
+    color: white;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
 }
