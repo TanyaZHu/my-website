@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Додати тварину</title>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/create_animal.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
-    <div class="create-form">
-        <h2>Додати нову тварину</h2>
-        <form action="/includes/add_animal.php" method="POST">
+    <header class="header">
+        <h1>Додати нову тварину</h1>
+    </header>
+
+    <main class="form-container">
+        <form action="/includes/create_animal.php" method="POST">
             <label for="name">Ім'я</label>
             <input type="text" id="name" name="name" required>
 
             <label for="age">Вік</label>
             <input type="number" id="age" name="age" required>
 
-            <label for="photo">Фото</label>
-            <input type="file" id="photo" name="photo">
+            <label for="gender">Стать</label>
+            <select id="gender" name="gender">
+                <option value="male">Самець</option>
+                <option value="female">Самка</option>
+            </select>
 
             <button type="submit">Додати</button>
         </form>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Всі права захищені</p>
+    </footer>
 </body>
 </html>
