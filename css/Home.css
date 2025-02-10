@@ -1,27 +1,23 @@
-.hero {
-    text-align: center;
-    padding: 50px;
-    background-color: #e0f7fa;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #008CBA;
+body {
+    background-color: #121212;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
-.btn:hover {
-    background-color: #007bb5;
-}
-
-.latest-news {
+.container {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
