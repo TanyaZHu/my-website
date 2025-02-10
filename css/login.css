@@ -27,7 +27,7 @@ body {
 .login-image {
     width: 55%;
     height: 500px;
-    background: url('../images/Login.png') no-repeat center center;
+    background: url('../images/login.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
 }
