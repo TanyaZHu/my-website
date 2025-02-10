@@ -1,21 +1,23 @@
-.container {
-    width: 40%;
+.registration-form {
+    width: 50%;
     margin: auto;
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h1 {
-    color: #333;
-}
-
-input[type="text"], input[type="email"], input[type="password"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    background-color: #222;
     border-radius: 5px;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+}
+
+.registration-form button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    border: none;
 }
