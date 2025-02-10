@@ -5,10 +5,12 @@
   RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
 </IfModule>
 
-# Оптимізація кешування статичних файлів
-<FilesMatch "\.(css|js|png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$">
-  Header set Cache-Control "max-age=31536000, public"
-</FilesMatch>
+# Переконаємося, що Header використовується тільки якщо доступний mod_headers
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>
 
 # Захист конфіденційних файлів
 <FilesMatch "(^\.htaccess|\.env|\.htpasswd|config\.php)">
