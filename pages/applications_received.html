@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заявки на усиновлення</title>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/applications_received.css">
+    <title>Заявки</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/applications.css">
 </head>
 <body>
-    <div class="applications-container">
-        <h2>Ваші заявки</h2>
-        <div class="application-card">
-            <p>Заявка на усиновлення <strong>Кота Мурчика</strong></p>
-            <span class="application-status">Очікує розгляду</span>
-        </div>
-        <div class="application-card">
-            <p>Заявка на усиновлення <strong>Собаки Барсика</strong></p>
-            <span class="application-status">Схвалено</span>
-        </div>
-    </div>
+    <header class="header">
+        <h1>Заявки на всиновлення</h1>
+    </header>
+
+    <main class="applications-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ім'я</th>
+                    <th>Електронна пошта</th>
+                    <th>Тварина</th>
+                    <th>Статус</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Іван Петренко</td>
+                    <td>ivan@example.com</td>
+                    <td>Мурчик</td>
+                    <td>Очікує</td>
+                    <td><button>Прийняти</button> <button>Відхилити</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Всі права захищені</p>
+    </footer>
 </body>
 </html>
