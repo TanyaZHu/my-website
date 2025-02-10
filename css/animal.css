@@ -1,23 +1,18 @@
-.container {
-    width: 60%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.animal-card {
+    border: 1px solid #555;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.animal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 .animal-info {
-    text-align: center;
-}
-
-.animal-info img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-}
-
-.details {
-    text-align: left;
-    margin-top: 20px;
+    font-size: 16px;
+    color: white;
 }
