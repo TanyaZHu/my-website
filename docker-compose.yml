@@ -1,27 +1,17 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  php-apache:
+  app:
     build: .
-    container_name: php_server
     ports:
-      - "8080:80"
-    depends_on:
-      - mysql
+      - "8000:8000"  # Відкриваємо порт для PHP-сервера
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=monorail.proxy.rlwy.net
+      - DB_PORT=53676
+      - DB_DATABASE=railway
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=yBvUgaqtraIRooWftLCLkGtjCFzYuonj
     volumes:
       - .:/var/www/html
-    restart: always
-
-  mysql:
-    image: mysql:5.7
-    container_name: mysql_db
-    restart: always
-    env_file: 
-      - .env
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-volumes:
-  mysql_data:
+    command: php -S 0.0.0.0:8000
