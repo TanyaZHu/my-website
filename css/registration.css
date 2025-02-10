@@ -26,7 +26,7 @@ body {
 .register-image {
     width: 55%;
     height: 500px;
-    background: url('../images/Create account.png') no-repeat center center;
+    background: url('../images/register.png') no-repeat center center;
     background-size: cover;
     border-radius: 10px;
 }
