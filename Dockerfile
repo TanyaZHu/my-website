@@ -13,4 +13,4 @@ WORKDIR /var/www/html
 COPY . .
 
 # Запускаємо PHP-сервер (порт 8000)
-CMD ["php", "-S", "0.0.0.0:8000"]
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "my-website-main"]
