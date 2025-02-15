@@ -8,17 +8,34 @@
     <link rel="stylesheet" href="../css/animals.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <img src="../images/logo.png" alt="Логотип">
-            <input type="text" id="search" placeholder="Пошук тварин...">
-            <nav>
-                <a href="#">Noticias</a>
-                <a href="#">Categoría</a>
-            </nav>
-            <button class="login-btn">Вхід</button>
+<header class="header">
+    <div class="header-container">
+        <a href="../index.html"><img src="../images/logo.png" alt="Логотип"></a>
+        <input type="text" placeholder="Пошук тварин...">
+        <nav>
+            <a href="#">Новини</a>
+            <a href="../pages/animals.html">Категорії</a>  <!-- Додано посилання -->
+        </nav>
+        <div class="user-auth">
+            <!-- Відображення кнопки входу або профілю користувача -->
+            <div id="guest-menu">
+                <a href="/pages/login.html" class="auth-btn">Увійти</a>
+                <a href="/pages/registr.html" class="auth-btn">Реєстрація</a>
+            </div>
+            <div id="user-menu" class="user-menu" style="display: none;">
+                <img src="../images/user.jpg" alt="Фото" id="user-avatar">
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="/pages/user.html">Мій акаунт</a>
+                    <a href="/pages/applications_received.html">Заявки на всиновлення</a>
+                    <a href="/includes/logout.php" id="logout-btn">Вийти</a>
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
+</header>
+
+<script src="../js/header.js"></script>
+
 
     <section class="banner">
         <img src="../images/banner.png" alt="Banner">
