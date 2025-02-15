@@ -1,16 +1,15 @@
-# Використовуємо PHP 8.1 без Apache
-FROM php:8.1-fpm
+# Використовуємо PHP 8.1 + Apache
+FROM php:8.1-apache
 
-# Встановлюємо PostgreSQL-драйвери
-RUN apt-get update && apt-get install -y \
-    libpq-dev \
+# Встановлюємо необхідні розширення для PostgreSQL
+RUN apt-get update && apt-get install -y libpq-dev \
     && docker-php-ext-install pdo_pgsql pgsql
 
-# Встановлюємо робочу директорію
-WORKDIR /var/www/html
-
 # Копіюємо файли у контейнер
-COPY . /var/www/html
+COPY . /var/www/html/
 
-# Запускаємо PHP-сервер (порт 8000)
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "/var/www/html"]
+# Виставляємо стандартний порт
+EXPOSE 10000
+
+# Запускаємо Apache
+CMD ["apache2-foreground"]
