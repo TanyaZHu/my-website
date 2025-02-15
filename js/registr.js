@@ -2,19 +2,23 @@ document.getElementById("register-form").addEventListener("submit", function (ev
     event.preventDefault();
 
     let formData = new FormData(this);
+    let jsonData = Object.fromEntries(formData.entries());
 
-    fetch("/backend/register.php", {
+    fetch("/includes/register.php", {
         method: "POST",
-        body: new URLSearchParams(formData)
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonData)
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert("¡Registro exitoso! Ahora puede iniciar sesión.");
+            alert("✅ Registration successful! You can now log in.");
             window.location.href = "/pages/login.html";
         } else {
-            alert("Error: " + data.message);
+            alert("⚠️ Error: " + data.message);
         }
     })
-    .catch(error => console.error("Error:", error));
+    .catch(error => console.error("❌ Fetch error:", error));
 });
