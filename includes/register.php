@@ -7,9 +7,9 @@ if (!isset($pdo) || $pdo === null) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = $_POST["name"] ?? null;
-    $email = $_POST["email"] ?? null;
-    $password = $_POST["password"] ?? null;
+    $name = htmlspecialchars(strip_tags(trim($_POST["name"] ?? "")));
+    $email = filter_var(trim($_POST["email"] ?? ""), FILTER_SANITIZE_EMAIL);
+    $password = $_POST["password"] ?? "";
 
     // Перевіряємо, чи всі поля заповнені
     if (!$name || !$email || !$password) {
