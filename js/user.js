@@ -46,6 +46,16 @@ document.getElementById("user-avatar").addEventListener("click", function () {
     document.getElementById("dropdown-menu").classList.toggle("show");
 });
 
+// 🔹 Закриття меню при кліку поза ним
+document.addEventListener("click", function (event) {
+    let menu = document.getElementById("dropdown-menu");
+    let avatar = document.getElementById("user-avatar");
+
+    if (!menu.contains(event.target) && !avatar.contains(event.target)) {
+        menu.classList.remove("show");
+    }
+});
+
 // 🔹 Функція для редагування тварини (при натисканні на кнопку "Редагувати")
 function editAnimal(animalId) {
     window.location.href = `/pages/edit_animal.html?id=${animalId}`;
