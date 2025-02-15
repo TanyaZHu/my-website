@@ -1,76 +1,125 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-}
-
+/* 🔹 Основний стиль контейнера користувача */
 .user-container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px;
-}
-
-.user-info {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.user-photo img {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-}
-
-.user-details h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.user-details p {
-    font-size: 18px;
-    margin: 5px 0;
-}
-
-.logout-button {
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.user-pets {
-    margin-top: 40px;
-}
-
-.pets-gallery {
-    display: flex;
-    gap: 20px;
-}
-
-.pet-card {
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.pet-card img {
-    width: 100%;
-    border-radius: 10px;
+/* 🔹 Фото користувача */
+.user-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
 }
 
-.pet-card button {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+/* 🔹 Деталі користувача */
+.user-details {
+    margin-top: 15px;
+}
+
+.user-details h2 {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #333;
+}
+
+.user-details p {
     font-size: 16px;
+    color: #555;
+}
+
+/* 🔹 Стиль картки тварини */
+.animal-card {
+    display: inline-block;
+    width: 200px;
+    margin: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.animal-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.animal-card h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.animal-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.animal-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: #007bff;
+    color: white;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.animal-card button:hover {
+    background: #0056b3;
+}
+
+/* 🔹 Випадаюче меню */
+.user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* 🔹 Фото користувача в хедері */
+.user-menu img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+/* 🔹 Стиль випадаючого меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* 🔹 Відображення випадаючого меню при активному класі */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* 🔹 Стилі для пунктів меню */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f2f2f2;
 }
