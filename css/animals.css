@@ -1,0 +1,131 @@
+/* 🔹 Основні стилі сторінки */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+/* 🔹 Хедер */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    padding: 15px;
+}
+
+.header-container img {
+    height: 40px;
+}
+
+.header-container input {
+    width: 30%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.header-container nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: blue;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 🔹 Банер */
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* 🔹 Контейнер зі списком */
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+/* 🔹 Блок фільтрів */
+.filters {
+    width: 20%;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.filters label {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.filters input {
+    margin-right: 5px;
+}
+
+/* 🔹 Головний список тварин */
+#animals-list {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+/* 🔹 Оформлення карток тварин */
+.animal-card {
+    width: 220px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.animal-card h4 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.animal-card p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* 🔹 Кнопка перегляду */
+.animal-card button {
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.animal-card button:hover {
+    background: #444;
+}
