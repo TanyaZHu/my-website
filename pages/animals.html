@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог тварин</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/animals.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/logo.png" alt="Логотип">
+            <input type="text" id="search" placeholder="Пошук тварин...">
+            <nav>
+                <a href="#">Noticias</a>
+                <a href="#">Categoría</a>
+            </nav>
+            <button class="login-btn">Вхід</button>
+        </div>
+    </header>
+
+    <section class="banner">
+        <img src="../images/banner.png" alt="Banner">
+    </section>
+
+    <div class="content">
+        <aside class="filters">
+            <h2>Категорії</h2>
+            <label><input type="checkbox" value="cat"> Коти</label>
+            <label><input type="checkbox" value="dog"> Собаки</label>
+            <label><input type="checkbox" value="bird"> Птахи</label>
+            <label><input type="checkbox" value="rodent"> Гризуни</label>
+            <label><input type="checkbox" value="domestic"> Домашні тварини</label>
+
+            <h2>Локація</h2>
+            <label><input type="radio" name="location" value="Asturias"> Asturias</label>
+            <label><input type="radio" name="location" value="Madrid"> Madrid</label>
+            <label><input type="radio" name="location" value="Gijon"> Gijón</label>
+            <label><input type="radio" name="location" value="Malaga"> Malaga</label>
+
+            <h2>Стать</h2>
+            <label><input type="radio" name="gender" value="M"> M</label>
+            <label><input type="radio" name="gender" value="F"> F</label>
+        </aside>
+
+        <main id="animals-list">
+            <!-- Тут будуть картки тварин -->
+        </main>
+    </div>
+
+    <script src="../js/animals.js"></script>
+</body>
+</html>
