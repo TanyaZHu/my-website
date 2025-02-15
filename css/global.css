@@ -1,116 +1,241 @@
-/* ====== Глобальні стилі ====== */
+/* 🔹 Загальні стилі */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
     margin: 0;
     padding: 0;
+    background: #f5f5f5;
 }
 
-/* ====== Фіксований хедер ====== */
-.header {
-    width: 100%;
-    background-color: black;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 70px;
-    z-index: 1000;
-}
-
-/* Контейнер всередині хедера */
+/* 🔹 Хедер */
 .header-container {
-    width: 100%;
-    max-width: 1200px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    background: black;
+    padding: 15px;
 }
 
-/* ====== Логотип ====== */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.header-container img {
+    height: 40px;
 }
 
-.logo img {
-    width: 50px;
+.header-container input {
+    width: 30%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.header-container nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: blue;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 🔹 Банер */
+.banner img {
+    width: 100%;
     height: auto;
 }
 
-.logo span {
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
-}
-
-/* ====== Пошуковий рядок ====== */
-.search-bar {
+/* 🔹 Контейнер зі списком */
+.content {
     display: flex;
-    align-items: center;
-    background-color: #222;
-    padding: 5px 10px;
-    border-radius: 5px;
-    width: 250px;
+    padding: 20px;
 }
 
-.search-bar input {
-    background: none;
-    border: none;
-    color: white;
+/* 🔹 Блок фільтрів */
+.filters {
+    width: 20%;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.filters label {
+    display: block;
+    margin: 5px 0;
     font-size: 16px;
-    padding: 5px;
-    width: 100%;
-    outline: none;
 }
 
-.search-button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+.filters input {
+    margin-right: 5px;
+}
+
+/* 🔹 Головний список тварин */
+#animals-list {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+/* 🔹 Оформлення карток тварин */
+.animal-card {
+    width: 220px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.animal-card h4 {
+    margin: 10px 0 5px;
     font-size: 18px;
 }
 
-/* ====== Навігація ====== */
-.nav-links {
-    display: flex;
-    gap: 20px;
+.animal-card p {
+    font-size: 14px;
+    color: gray;
 }
 
-.nav-links a {
+/* 🔹 Кнопка перегляду */
+.animal-card button {
+    background: black;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
 }
 
-/* ====== Кнопка "SIGN UP" ====== */
-.signup-btn {
-    background-color: #1E40FF;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+.animal-card button:hover {
+    background: #444;
 }
 
-.signup-btn:hover {
-    background-color: #1629B9;
-}
-
-/* ====== Виправлення відступів для контенту під хедером ====== */
-.login-page {
-    margin-top: 100px; /* Щоб не перекривався хедером */
+/* 🔹 Блок авторизації в хедері */
+.user-auth {
     display: flex;
-    width: 80%;
-    max-width: 1000px;
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 🔹 Стиль кнопок "Увійти" і "Реєстрація" */
+.auth-btn {
+    background: blue;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-btn:hover {
+    background: darkblue;
+}
+
+/* 🔹 Випадаюче меню користувача */
+.user-menu {
+    position: relative;
+    display: none; /* Приховане за замовчуванням */
+    cursor: pointer;
+}
+
+.user-menu img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+/* 🔹 Випадаючий список */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* 🔹 Відображення випадаючого меню при активному класі */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* 🔹 Стилі для пунктів меню */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f2f2f2;
+}
+
+/* 🔹 Повідомлення про авторизацію */
+.auth-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.auth-modal-content h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.auth-modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.auth-btn {
+    background: blue;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-btn:hover {
+    background: darkblue;
 }
