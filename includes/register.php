@@ -1,50 +1,54 @@
 <?php
 include(__DIR__ . '/../config/database.php');
 
-// Перевіряємо, чи підключення до бази даних існує
-if (!isset($pdo) || $pdo === null) {
-    die(json_encode(["success" => false, "message" => "❌ Database connection error"]));
+header("Content-Type: application/json");
+
+// Читаємо вхідні дані
+$inputData = file_get_contents("php://input");
+$data = json_decode($inputData, true);
+
+// Логування отриманих даних (тільки для тестування)
+file_put_contents(__DIR__ . "/debug.log", date("Y-m-d H:i:s") . " - Received Data: " . print_r($data, true) . "\n", FILE_APPEND);
+
+if (!$data) {
+    die(json_encode(["success" => false, "message" => "⚠️ No data received!", "debug" => $inputData]));
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = htmlspecialchars(strip_tags(trim($_POST["name"] ?? "")));
-    $email = filter_var(trim($_POST["email"] ?? ""), FILTER_SANITIZE_EMAIL);
-    $password = $_POST["password"] ?? "";
+// Отримуємо дані
+$name = htmlspecialchars(strip_tags(trim($data["name"] ?? "")));
+$email = filter_var(trim($data["email"] ?? ""), FILTER_SANITIZE_EMAIL);
+$password = $data["password"] ?? "";
 
-    // Перевіряємо, чи всі поля заповнені
-    if (!$name || !$email || !$password) {
-        die(json_encode(["success" => false, "message" => "⚠️ All fields are required"]));
+if (!$name || !$email || !$password) {
+    die(json_encode(["success" => false, "message" => "⚠️ All fields are required"]));
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die(json_encode(["success" => false, "message" => "⚠️ Invalid email format"]));
+}
+
+if (strlen($password) < 6) {
+    die(json_encode(["success" => false, "message" => "⚠️ Password must be at least 6 characters"]));
+}
+
+try {
+    // Перевіряємо, чи email вже використовується
+    $stmt = $pdo->prepare("SELECT id FROM Users WHERE email = ?");
+    $stmt->execute([$email]);
+
+    if ($stmt->fetch()) {
+        die(json_encode(["success" => false, "message" => "⚠️ Email already in use"]));
     }
 
-    // Валідація email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die(json_encode(["success" => false, "message" => "⚠️ Invalid email format"]));
-    }
+    // Хешуємо пароль
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    // Перевіряємо довжину пароля
-    if (strlen($password) < 6) {
-        die(json_encode(["success" => false, "message" => "⚠️ Password must be at least 6 characters"]));
-    }
+    // Додаємо користувача
+    $stmt = $pdo->prepare("INSERT INTO Users (name, email, password, role) VALUES (?, ?, ?, 'user')");
+    $stmt->execute([$name, $email, $hashed_password]);
 
-    try {
-        // Перевіряємо, чи email вже використовується
-        $stmt = $pdo->prepare("SELECT id FROM Users WHERE email = ?");
-        $stmt->execute([$email]);
-
-        if ($stmt->fetch()) {
-            die(json_encode(["success" => false, "message" => "⚠️ Email already in use"]));
-        }
-
-        // Хешуємо пароль
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
-        // Додаємо користувача
-        $stmt = $pdo->prepare("INSERT INTO Users (name, email, password, role) VALUES (?, ?, ?, 'user')");
-        $stmt->execute([$name, $email, $hashed_password]);
-
-        echo json_encode(["success" => true, "message" => "✅ Registration successful"]);
-    } catch (PDOException $e) {
-        die(json_encode(["success" => false, "message" => "❌ Database error: " . $e->getMessage()]));
-    }
+    echo json_encode(["success" => true, "message" => "✅ Registration successful"]);
+} catch (PDOException $e) {
+    die(json_encode(["success" => false, "message" => "❌ Database error: " . $e->getMessage()]));
 }
 ?>
