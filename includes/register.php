@@ -1,43 +1,36 @@
-<?php
-include '../config/db_connect.php';
+include(__DIR__ . '/../config/database.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = htmlspecialchars(strip_tags(trim($_POST["name"])));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $password = $_POST["password"];
+    $name = $_POST["name"] ?? null;
+    $email = $_POST["email"] ?? null;
+    $password = $_POST["password"] ?? null;
+
+    if (!$name || !$email || !$password) {
+        die(json_encode(["success" => false, "message" => "All fields are required"]));
+    }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(["success" => false, "message" => "Formato de correo electrónico no válido."]);
-        exit();
+        die(json_encode(["success" => false, "message" => "Invalid email format"]));
     }
 
     if (strlen($password) < 6) {
-        echo json_encode(["success" => false, "message" => "La contraseña debe tener al menos 6 caracteres."]);
-        exit();
+        die(json_encode(["success" => false, "message" => "Password must be at least 6 characters"]));
     }
 
-    $stmt = $conn->prepare("SELECT id FROM Users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        echo json_encode(["success" => false, "message" => "El correo electrónico ya está en uso."]);
-        exit();
+    // Перевіряємо, чи email вже існує
+    $stmt = $pdo->prepare("SELECT id FROM Users WHERE email = ?");
+    $stmt->execute([$email]);
+    
+    if ($stmt->fetch()) {
+        die(json_encode(["success" => false, "message" => "Email already in use"]));
     }
-    $stmt->close();
 
+    // Хешуємо пароль
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $stmt = $conn->prepare("INSERT INTO Users (name, email, password, role) VALUES (?, ?, ?, 'user')");
-    $stmt->bind_param("sss", $name, $email, $hashed_password);
+    // Додаємо користувача
+    $stmt = $pdo->prepare("INSERT INTO Users (name, email, password, role) VALUES (?, ?, ?, 'user')");
+    $stmt->execute([$name, $email, $hashed_password]);
 
-    if ($stmt->execute()) {
-        echo json_encode(["success" => true]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Error en el registro"]);
-    }
-    $stmt->close();
+    echo json_encode(["success" => true]);
 }
-$conn->close();
-?>
